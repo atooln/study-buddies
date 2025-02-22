@@ -1,2 +1,2 @@
 # study-buddies
-your personal workspace
+your personal workspace :-)
