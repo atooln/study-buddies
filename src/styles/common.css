@@ -1,0 +1,30 @@
+/* Reset and base styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.page-container {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common page layout */
+.page-content {
+  flex: 1;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
