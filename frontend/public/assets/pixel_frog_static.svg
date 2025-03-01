@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Transparent background -->
+  <rect width="120" height="120" fill="none" />
+  
+  <!-- Base frog container with overall animations -->
+  <g id="frog-container">
+    <!-- Gentle bobbing animation -->
+    <animateTransform attributeName="transform" type="translate" 
+                     values="0,0; 0,-2; 0,0" 
+                     dur="1.5s" repeatCount="indefinite" additive="sum" />
+    
+    <!-- Jump animation that happens occasionally -->
+    <animateTransform attributeName="transform" type="translate" 
+                     values="0,0; 0,-8; 0,0" 
+                     dur="0.8s" begin="3s;+6s" 
+                     repeatCount="indefinite" additive="sum" />
+                     
+    <!-- Main frog body -->
+    <g id="frog-body">
+      <!-- Main body -->
+      <rect x="30" y="60" width="60" height="30" fill="#8BC34A" />
+      <!-- Belly -->
+      <rect x="40" y="70" width="40" height="20" fill="#D2B48C" />
+      <!-- Legs -->
+      <rect x="25" y="85" width="15" height="10" fill="#8BC34A" />
+      <rect x="80" y="85" width="15" height="10" fill="#8BC34A" />
+      <!-- Head -->
+      <rect x="30" y="40" width="60" height="25" fill="#8BC34A" />
+      <!-- Mouth -->
+      <rect x="45" y="60" width="30" height="5" fill="#6B0000" />
+    </g>
+    
+    <!-- Eyes that blink independently without flashing -->
+    <g id="eyes">
+      <!-- Left eye -->
+      <g id="left-eye">
+        <rect x="35" y="45" width="15" height="15" fill="#5D0202" />
+        <rect x="38" y="48" width="9" height="9" fill="#FFFFFF" />
+        <rect x="40" y="50" width="5" height="5" fill="#000000" />
+        
+        <!-- Blink animation - smoothly changes height without disappearing -->
+        <rect x="35" y="45" width="15" height="0" fill="#8BC34A">
+          <animate attributeName="height" 
+                   values="0;15;0" 
+                   dur="0.3s" 
+                   begin="4s;+7s" 
+                   repeatCount="indefinite" />
+        </rect>
+      </g>
+      
+      <!-- Right eye -->
+      <g id="right-eye">
+        <rect x="70" y="45" width="15" height="15" fill="#5D0202" />
+        <rect x="73" y="48" width="9" height="9" fill="#FFFFFF" />
+        <rect x="75" y="50" width="5" height="5" fill="#000000" />
+        
+        <!-- Blink animation - slightly offset from left eye -->
+        <rect x="70" y="45" width="15" height="0" fill="#8BC34A">
+          <animate attributeName="height" 
+                   values="0;15;0" 
+                   dur="0.3s" 
+                   begin="4.1s;+7s" 
+                   repeatCount="indefinite" />
+        </rect>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Border for pixel definition, makes it look more pixelated -->
+  <rect x="0" y="0" width="120" height="120" fill="none" stroke="none" />
+</svg>
